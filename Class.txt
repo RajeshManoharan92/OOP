@@ -1,0 +1,98 @@
+1.https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+
+let movieDetails = [];
+class Movie {
+    constructor(title,studio,rating){
+        this.title = title;
+        this.studio = studio;
+        this.rating = rating;
+        var obj = {};
+        obj.title = this.title;
+        obj.studio = this.studio;
+        obj.rating = this.rating == "" ? "PG" : this.rating ;
+        movieDetails.push(obj);  
+       
+}
+
+    getPG(){
+        
+        let res = movieDetails.filter(ele => (ele.rating==="PG"));
+            return(res);
+}
+}
+let objInst1 = new Movie("Casino Royale","Eon Productions","PG­13");
+let objInst2 = new Movie("TITANIC","Baja Studios","");
+console.log(objInst1.getPG())
+
+
+-----------------------------------------
+2.https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+
+class circle {
+    constructor (radius, color) 
+    {
+        this.radius=radius;
+        this.color=color;
+    }
+    tostring(){
+        return "Circle" +" [ " + ("radius = "  + (this.radius).toFixed(1) + ", " + "Color = "+this.color) + "]"
+    }
+    getArea(){
+        return "Area of the circle" + " : " + (Math.PI * Math.pow(this.radius, 2)).toFixed(2)
+
+    }
+    getcircumference()
+    {
+        return "Circumference of the circle" + " : " +(2*Math.PI*this.radius).toFixed(2)
+    }
+}
+let obj1= new circle(1.0, "red")
+console.log(obj1.tostring())
+console.log(obj1.getArea())
+console.log(obj1.getcircumference())
+
+-----------------------------------------
+3. Write a “person” class to hold all the details.
+
+class Person {
+    constructor (Name,Age,Qualification,MobileNumber )
+    {
+        this.Name=Name;
+        this.Age=Age;
+        this.Qualification=Qualification;
+        this.MobileNumber=MobileNumber;
+    }
+    Details () {
+        let a = ("Name"+": "+this.Name)+' ; '+("Age"+": "+this.Age)+' ; '+("Qualification"+": "+this.Qualification)+' ; '+("Mobile Number"+": "+this.MobileNumber)
+        return a
+        
+    }
+}
+let Object = new Person ("Rajesh M",29,"M-Tech",9791967710)
+console.log(Object.Details())
+
+-----------------------------------------
+
+4.write a class to calculate uber price.
+
+class Uberprice {
+    constructor (BaseFare, Hour,Km )
+    {
+        this.BaseFare=BaseFare;
+        this.Hour=Hour;
+        this.Km=Km;
+    }
+    price () {
+        let a = this.BaseFare*this.Hour*this.Km
+        return a
+        
+    }
+}
+let Object = new Uberprice (100,2,50)
+console.log(Object.price())
+
+
+
+
+------------------------------------------------
+
